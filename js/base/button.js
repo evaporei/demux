@@ -1,7 +1,6 @@
-const button = (txt, onclick) => {
+const button = txt => {
     const btn = document.createElement('button')
     btn.innerText = txt
-    btn.onclick = onclick
     return btn
 }
 

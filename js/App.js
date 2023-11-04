@@ -3,8 +3,9 @@ import Image from './components/Image.js'
 
 async function App() {
     const d = div()
-    d.append(Image('initial', 'ruby01', 'emerald01'))
+    let curr = 'initial'
+    d.append(Image(curr))
     return d
 }
 
-export default App;
+export default App
