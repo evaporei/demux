@@ -1,14 +1,10 @@
+import { div } from './base/index.js'
 import Image from './components/Image.js'
 
 async function App() {
-  const template = document.createElement('template')
-  template.innerHTML = `
-    <div class="container">
-      ${await Image('initial', 'Ruby', 'Emerald')}
-    </div>
-  `
-  // Return a new node from template
-  return template.content.cloneNode(true)
+    const d = div()
+    d.append(Image('initial', 'Ruby', 'Emerald'))
+    return d
 }
 
 export default App;

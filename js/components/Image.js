@@ -1,11 +1,18 @@
-const Image = async (src, optionA, optionB) => `
-    <div class="card">
-        <h1>${src}</h1>
-      <img src="../../assets/${src}.jpg" style="max-width: 450px; max-height: 300px" />
-      <div>
-        <button>${optionA}</button>
-        <button>${optionB}</button>
-      </div>
-    </div>`
+import { button, h1, img } from '../base/index.js'
+
+const onClick = who => _event => console.log('onclick', who)
+
+const Image = (src, optionA, optionB) => {
+    const outer = document.createElement('div')
+    outer.append(h1(src))
+    outer.append(img(`../assets/${src}.jpg`))
+
+    const inner = document.createElement('div')
+    inner.append(button(optionA, onClick(optionA)))
+    inner.append(button(optionB, onClick(optionB)))
+
+    outer.append(inner)
+    return outer
+}
 
 export default Image;
