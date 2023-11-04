@@ -1,11 +1,16 @@
 import { button, h1, img } from '../base/index.js'
 
-const onClick = who => _event => console.log('onclick', who)
-
 const Image = (src, optionA, optionB) => {
     const outer = document.createElement('div')
     outer.append(h1(src))
-    outer.append(img(`../assets/${src}.jpg`))
+
+    const image = img(`../assets/${src}.jpg`)
+    outer.append(image)
+
+    const onClick = newSrc => _event => {
+        console.log('onclick', newSrc)
+        image.src = `../assets/${newSrc}.jpg`
+    }
 
     const inner = document.createElement('div')
     inner.append(button(optionA, onClick(optionA)))
