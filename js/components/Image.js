@@ -3,7 +3,8 @@ import srcTree from '../src-tree.js'
 
 const Image = initialSrc => {
     const outer = document.createElement('div')
-    outer.append(h1(initialSrc))
+    const title = h1(initialSrc)
+    outer.append(title)
 
     const image = img(`../assets/${initialSrc}.jpg`)
     outer.append(image)
@@ -27,6 +28,7 @@ const Image = initialSrc => {
             newSrc = optionB
         }
 
+        title.innerText = srcTree[newSrc].title
         image.src = `../assets/${newSrc}.jpg`
 
         if (srcTree[newSrc].next) {
