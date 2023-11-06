@@ -1,12 +1,18 @@
 import { button, h1, img, p } from '../base/index.js'
 import srcTree from '../src-tree.js'
 
+// I hate you Jekyll, once again...
+const buildImgPath = src =>
+    location.hostname == 'evaporei.github.io'
+        ? `../demux/assets/images/${src}.jpg`
+        : `../assets/images/${src}.jpg`
+
 const Image = initialSrc => {
     const outer = document.createElement('div')
     const title = h1(initialSrc)
     outer.append(title)
 
-    const image = img(`../assets/images/${initialSrc}.jpg`)
+    const image = img(buildImgPath(initialSrc))
     outer.append(image)
 
     let inner, btnA, btnB
@@ -29,7 +35,7 @@ const Image = initialSrc => {
         }
 
         title.innerText = srcTree[newSrc].title
-        image.src = `../assets/images/${newSrc}.jpg`
+        image.src = buildImgPath(newSrc)
 
         if (srcTree[newSrc].next) {
             const [nextA, nextB] = srcTree[newSrc].next
