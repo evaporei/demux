@@ -1,7 +1,12 @@
 import App from './App.js';
 
 const app = async () => {
-  document.getElementById('app').appendChild(await App());
+    const app = document.getElementById('app')
+
+    // OMG I hate jekyll
+    app.innerHTML = ''
+
+    app.appendChild(await App());
 };
 
 app();
