@@ -46,7 +46,7 @@ const Image = initialSrc => {
                 inner.removeChild(btnA)
                 inner.removeChild(btnB)
                 outer.removeChild(inner)
-                outer.append(p('acabou a história!'))
+                outer.append(p('acabou a história! Aperte F5 para comecar novamente ;)'))
             }
         }
     }
