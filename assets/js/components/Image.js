@@ -6,7 +6,7 @@ const Image = initialSrc => {
     const title = h1(initialSrc)
     outer.append(title)
 
-    const image = img(`../assets/${initialSrc}.jpg`)
+    const image = img(`../assets/images/${initialSrc}.jpg`)
     outer.append(image)
 
     let inner, btnA, btnB
@@ -14,8 +14,8 @@ const Image = initialSrc => {
     const onClick = function onClick (_event) {
         const url = new URL(image.src)
         const pathname = url.pathname
-        const imgName = pathname // '/assets/initial.jpg'
-            .split('/') // ['', 'assets', 'initial.jpg']
+        const imgName = pathname // '/assets/images/initial.jpg'
+            .split('/') // ['', 'assets', 'images', 'initial.jpg']
             .pop() // initial.jpg
             .split('.') // ['initial', 'jpg']
             .shift() // 'initial'
@@ -29,7 +29,7 @@ const Image = initialSrc => {
         }
 
         title.innerText = srcTree[newSrc].title
-        image.src = `../assets/${newSrc}.jpg`
+        image.src = `../assets/images/${newSrc}.jpg`
 
         if (srcTree[newSrc].next) {
             const [nextA, nextB] = srcTree[newSrc].next
