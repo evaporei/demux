@@ -10,7 +10,9 @@ const buildImgPath = src =>
 const Image = initialSrc => {
     const outer = document.createElement('div')
     const title = h1(initialSrc)
+    title.className = 'title'
     outer.append(title)
+    outer.className = 'nes-container with-title is-centered'
 
     const image = img(buildImgPath(initialSrc))
     outer.append(image)
