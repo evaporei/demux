@@ -4,8 +4,8 @@ import srcTree from '../src-tree.js'
 // I hate you Jekyll, once again...
 const buildImgPath = src =>
     location.hostname == 'evaporei.github.io'
-        ? `../demux/assets/images/${src}.jpg`
-        : `../assets/images/${src}.jpg`
+        ? `../demux/assets/${src}.jpg`
+        : `../assets/${src}.jpg`
 
 const Image = initialSrc => {
     const outer = document.createElement('div')
@@ -20,8 +20,8 @@ const Image = initialSrc => {
     const onClick = function onClick (_event) {
         const url = new URL(image.src)
         const pathname = url.pathname
-        const imgName = pathname // '/assets/images/initial.jpg'
-            .split('/') // ['', 'assets', 'images', 'initial.jpg']
+        const imgName = pathname // '/assets/initial.jpg'
+            .split('/') // ['', 'images', 'initial.jpg']
             .pop() // initial.jpg
             .split('.') // ['initial', 'jpg']
             .shift() // 'initial'
