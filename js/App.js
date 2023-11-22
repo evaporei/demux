@@ -1,11 +1,11 @@
 import { div } from './base/index.js'
-import Image from './components/Image.js'
+import Video from './components/Video.js'
 
 async function App() {
     const d = div()
     d.style = 'text-align: center'
     let curr = 'initial'
-    d.append(Image(curr))
+    d.append(Video(curr))
     return d
 }
 

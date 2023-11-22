@@ -7,7 +7,7 @@ const buildImgPath = src =>
         ? `../demux/assets/${src}.jpg`
         : `../assets/${src}.jpg`
 
-const Image = initialSrc => {
+const Video = initialSrc => {
     const outer = document.createElement('div')
     const title = h1(initialSrc)
     title.className = 'title'
@@ -71,4 +71,4 @@ const Image = initialSrc => {
     return outer
 }
 
-export default Image
+export default Video
