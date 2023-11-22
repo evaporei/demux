@@ -1,27 +1,27 @@
 const srcTree = {
     "initial": {
-        title: "first scene",
+        title: "Intro",
         next: ["ruby01", "emerald01"],
     },
     "ruby01": {
-        title: "Ruby",
+        title: "Rubi",
         next: ["ruby02", "ruby03"],
     },
     "emerald01": {
-        title: "Emerald",
+        title: "Isabella",
         next: ["emerald02", "emerald03"],
     },
     "ruby02": {
-        title: "chinelo",
+        title: "Fugir",
     },
     "ruby03": {
-        title: "mimindo",
+        title: "Lutar",
     },
     "emerald02": {
-        title: "computador",
+        title: "Encontro",
     },
     "emerald03": {
-        title: "mimindo",
+        title: "Conhecer melhor",
     },
 }
 
