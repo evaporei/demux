@@ -1,11 +1,6 @@
-import { button, h1, img, p } from '../base/index.js'
+import { button, h1, p } from '../base/index.js'
 import srcTree from '../src-tree.js'
-
-// I hate you Jekyll, once again...
-const buildImgPath = src =>
-    location.hostname == 'evaporei.github.io'
-        ? `../demux/assets/${src}.jpg`
-        : `../assets/${src}.jpg`
+import YTPlayer from './YTPlayer.js'
 
 const Video = initialSrc => {
     const outer = document.createElement('div')
@@ -14,21 +9,15 @@ const Video = initialSrc => {
     outer.append(title)
     outer.className = 'nes-container with-title is-centered'
 
-    const image = img(buildImgPath(initialSrc))
-    outer.append(image)
+    let currSrc = initialSrc
+    let currUrl = srcTree[currSrc].url
+    const player = YTPlayer(currUrl)
+    outer.append(player)
 
     let inner, btnA, btnB
 
     const onClick = function onClick (_event) {
-        const url = new URL(image.src)
-        const pathname = url.pathname
-        const imgName = pathname // '/assets/initial.jpg'
-            .split('/') // ['', 'images', 'initial.jpg']
-            .pop() // initial.jpg
-            .split('.') // ['initial', 'jpg']
-            .shift() // 'initial'
-
-        const [optionA, optionB] = srcTree[imgName].next
+        const [optionA, optionB] = srcTree[currSrc].next
         let newSrc
         if (this.id == 'btnA') {
             newSrc = optionA
@@ -36,8 +25,10 @@ const Video = initialSrc => {
             newSrc = optionB
         }
 
+        currSrc = newSrc
+
         title.innerText = srcTree[newSrc].title
-        image.src = buildImgPath(newSrc)
+        player.src = `https://www.youtube.com/embed/${srcTree[newSrc].url}?autoplay=0&origin=${location.hostname}`
 
         if (srcTree[newSrc].next) {
             const [nextA, nextB] = srcTree[newSrc].next
