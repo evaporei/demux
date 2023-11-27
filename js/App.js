@@ -3,9 +3,11 @@ import Video from './components/Video.js'
 
 async function App() {
     const d = div()
-    d.style = 'text-align: center'
+    // d.style = 'text-align: center'
     let curr = 'initial'
-    d.append(Video(curr))
+    let { outer, inner } = Video(curr)
+    d.append(outer)
+    d.append(inner)
     return d
 }
 

@@ -1,13 +1,10 @@
-import { button, h1, p } from '../base/index.js'
+import { button, p } from '../base/index.js'
 import srcTree from '../src-tree.js'
 import YTPlayer from './YTPlayer.js'
 
 const Video = initialSrc => {
     const outer = document.createElement('div')
-    const title = h1(initialSrc)
-    title.className = 'title'
-    outer.append(title)
-    outer.className = 'nes-container with-title is-centered'
+    outer.className = 'flex justify-center'
 
     let currSrc = initialSrc
     let currUrl = srcTree[currSrc].url
@@ -27,7 +24,6 @@ const Video = initialSrc => {
 
         currSrc = newSrc
 
-        title.innerText = srcTree[newSrc].title
         player.src = `https://www.youtube.com/embed/${srcTree[newSrc].url}?autoplay=0&origin=${location.hostname}`
 
         if (srcTree[newSrc].next) {
@@ -38,8 +34,9 @@ const Video = initialSrc => {
             if (inner.hasChildNodes()) {
                 inner.removeChild(btnA)
                 inner.removeChild(btnB)
-                outer.removeChild(inner)
-                outer.append(p('acabou a história! Aperte F5 para comecar novamente ;)'))
+                let finalTxt = p('acabou a história! Aperte F5 para comecar novamente ;)')
+                finalTxt.className = 'flex justify-center'
+                outer.after(finalTxt)
             }
         }
     }
@@ -55,11 +52,11 @@ const Video = initialSrc => {
     btnB.onclick = onClick
 
     inner = document.createElement('div')
+    inner.className = 'flex justify-center'
     inner.append(btnA)
     inner.append(btnB)
 
-    outer.append(inner)
-    return outer
+    return { outer, inner }
 }
 
 export default Video
