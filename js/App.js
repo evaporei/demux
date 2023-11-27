@@ -21,7 +21,7 @@ async function App() {
     summary4.className = "flex justify-center text-white"
     d.append(summary4)
     let exemplo = p('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
-    exemplo.className = "flex justify-center"
+    exemplo.className = "flex justify-center text-black"
     d.append(exemplo)
 
     let curr = 'initial'
