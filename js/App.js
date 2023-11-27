@@ -1,7 +1,7 @@
 import { div, h1, p } from './base/index.js'
 import Video from './components/Video.js'
 
-async function App() {
+function App() {
     const d = div()
 
     let summaryWindow = div()

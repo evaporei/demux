@@ -1,12 +1,9 @@
-import App from './App.js';
+import App from './App.js'
 
-const app = async () => {
+const app = () => {
     const app = document.getElementById('app')
 
-    // OMG I hate jekyll
-    app.innerHTML = ''
+    app.append(App())
+}
 
-    app.appendChild(await App());
-};
-
-app();
+app()
