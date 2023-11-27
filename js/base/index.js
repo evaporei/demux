@@ -6,5 +6,6 @@ import p from './p.js'
 const createElement = tag => document.createElement(tag)
 
 const div = () => createElement('div')
+const nav = () => createElement('nav')
 
-export { button, h1, img, div, p }
+export { button, h1, img, div, nav, p }
