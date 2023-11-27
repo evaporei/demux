@@ -3,19 +3,21 @@ import Video from './components/Video.js'
 
 async function App() {
     const d = div()
-    d.className = "window"
-    d.style = 'width: 70%'
+
+    let summaryWindow = div()
+    summaryWindow.className = "window"
+    summaryWindow.style = 'width: 60%'
 
     let titleBar = div()
     titleBar.className = "title-bar"
     let title = h1("SINOPSE")
     title.className = "flex justify-center text-black py-4 text-xl title"
     titleBar.append(title)
-    d.append(titleBar)
+    summaryWindow.append(titleBar)
 
     let separator = div()
     separator.className = "separator"
-    d.append(separator)
+    summaryWindow.append(separator)
 
     let c = div() // content
     c.className = "window-pane"
@@ -24,12 +26,40 @@ async function App() {
     summary.className = "flex justify-center text-black"
     c.append(summary)
 
+    summaryWindow.append(c)
+    let foo = div()
+    foo.className = "flex justify-center"
+    foo.append(summaryWindow)
+    d.append(foo)
+
+    let videoDiv = div()
+    videoDiv.className = "window"
+    videoDiv.style = "width: 60%"
+
+    let videoTitle = div()
+    videoTitle.className = "title-bar"
+    let tH1 = h1("VÍDEO")
+    tH1.className = "flex justify-center text-black py-4 text-xl title"
+    videoTitle.append(tH1)
+    videoDiv.append(videoTitle)
+
+    let separator2 = div()
+    separator2.className = "separator"
+    videoDiv.append(separator)
+
+    let videoContent = div()
+    videoContent.className = "window-pane"
     let curr = 'initial'
     let { outer, inner } = Video(curr)
-    c.append(outer)
-    c.append(inner)
+    videoContent.append(outer)
+    videoContent.append(inner)
 
-    d.append(c)
+    videoDiv.append(videoContent)
+
+    let bar = div()
+    bar.className = "flex justify-center"
+    bar.append(videoDiv)
+    d.append(bar)
 
     return d
 }
