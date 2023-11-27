@@ -4,7 +4,7 @@ import YTPlayer from './YTPlayer.js'
 
 const Video = initialSrc => {
     const outer = document.createElement('div')
-    outer.className = 'flex justify-center'
+    outer.className = 'flex justify-center py-4'
 
     let currSrc = initialSrc
     let currUrl = srcTree[currSrc].url
