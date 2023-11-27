@@ -34,7 +34,7 @@ const Video = initialSrc => {
             if (inner.hasChildNodes()) {
                 inner.removeChild(btnA)
                 inner.removeChild(btnB)
-                let finalTxt = p('acabou a história! Aperte F5 para comecar novamente ;)')
+                let finalTxt = p('Obrigado por jogar!')
                 finalTxt.className = 'flex justify-center'
                 outer.after(finalTxt)
             }
