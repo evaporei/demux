@@ -5,16 +5,10 @@ const videosLink = document.getElementById('videos-link')
 
 if (location.pathname.endsWith('/') || location.pathname.endsWith('/index.html')) {
     homeLink.classList.add('is-primary')
-}
-
-if (location.pathname.endsWith('/sobre.html')) {
+} else if (location.pathname.endsWith('/sobre.html')) {
     aboutLink.classList.add('is-primary')
-}
-
-if (location.pathname.endsWith('/personagens.html')) {
+} else if (location.pathname.endsWith('/personagens.html')) {
     charsLink.classList.add('is-primary')
-}
-
-if (location.pathname.endsWith('/videos.html')) {
+} else if (location.pathname.endsWith('/videos.html')) {
     videosLink.classList.add('is-primary')
 }
