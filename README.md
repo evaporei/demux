@@ -1,3 +1,5 @@
-# demux
+# nao-e-uma-comedia-romantica
 
-🌴 tree of video choices.
+💿 site do trabalho de faculdade da minha irmã
+
+https://instagram.com/n_comediaromantica
