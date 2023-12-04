@@ -6,6 +6,9 @@ const YTPlayer = videoId => {
     player.height = 720
     player.src = `https://www.youtube.com/embed/${videoId}?autoplay=0&origin=${location.hostname}`
     player.frameBorder = '0'
+    player.allowFullscreen = true
+    player.allow = 'fullscreen'
+    player.setAttribute('allow', 'fullscreen')
 
     return player
 }
