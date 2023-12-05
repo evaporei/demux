@@ -2,21 +2,21 @@ const srcTree = {
     "initial": {
         title: "Intro",
         next: ["ruby01", "emerald01"],
-        url: 'Cv0euJgLSuY',
+        url: 'AFygAied1Xs',
     },
     "ruby01": {
         title: "Rubi",
         next: ["ruby02", "ruby03"],
-        url: '3gg14C-Vsp4',
+        url: 'Mpu32AjQcpg',
     },
     "emerald01": {
         title: "Isabella",
         next: ["emerald02", "emerald03"],
-        url: 'm8_jhFFa-6I',
+        url: 'oKAIT8mEyW0',
     },
     "ruby02": {
         title: "Fugir",
-        url: 'm7o5R5uC02c',
+        url: '6jPkhCSXI2A',
     },
     "ruby03": {
         title: "Lutar",
@@ -24,11 +24,11 @@ const srcTree = {
     },
     "emerald02": {
         title: "Encontro",
-        url: 'RJBoWKiC-nA',
+        url: 'EfDziNL3vDw',
     },
     "emerald03": {
         title: "Conhecer melhor",
-        url: 'nco1MFlZNMQ',
+        url: 'btuQoJzUK7s',
     },
 }
 
